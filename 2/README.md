@@ -28,3 +28,55 @@ ONE = 456;
 console.log(ONE); // 456
 console.log(Number.MAX_VALUE); // 1.79~~
 ```
+#### typeof 연산자
+##### 데이터(값) 타입 반환
+```
+var point = 123;
+console.log(typeof point); // number
+
+var book = "책";
+console.log(typeof book); // string
+```
+#### Number Type
+##### 부호(+,-)를 가진 값
+
+```
+var point = 123;
+console.log(typeof point); // number
+point = -1.23;
+console.log(typeof point); // number
+```
+##### Number Type의 특수한 3개 값
+###### NaN : Not-a-Number
+###### Infinity : 양수 무한대
+###### -Infinity : 음수 무한대
+
+```
+var point = 1 * "A";
+console.log(point); // NaN
+```
+#### String type
+##### 값을 "" 또는 '' 사이에 작성
+##### ""와 '' 같이 사용할 때
+```
+var point = "책, ,'123'";
+console.log(point); // 책, '123'
+point = '책, "123"';
+console.log(point) // 책, "123"
+##### 따옴표에 숫자를 작성하면 문자 타입
+```
+var value = "123";
+console.log(typeof value); // string
+```
+#### Undefined Type
+##### 변수를 선언만 한 것으로 undefined가 초깃값으로 설정
+```
+var point;
+console.log(point); // undefined
+```
+##### 변수에 undefined 할당 가능
+```
+var point = undefined;
+console.log(point); // undefined
+```
+####
