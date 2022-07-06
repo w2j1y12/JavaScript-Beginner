@@ -63,6 +63,7 @@ var point = "책, ,'123'";
 console.log(point); // 책, '123'
 point = '책, "123"';
 console.log(point) // 책, "123"
+```
 ##### 따옴표에 숫자를 작성하면 문자 타입
 ```
 var value = "123";
