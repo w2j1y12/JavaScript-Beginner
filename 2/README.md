@@ -5,7 +5,9 @@
 #### console.log(data) : 소괄호 안에 작성된 값을 브라우저 콘솔창에 출력
 ##### + data : 파라미터 값
 
-  var point = 123;
-  console.log(potin);
+```
+var point = 123;
+console.log(point);
+```
 
 #### JS는 정수와 실수를 구분하지 않음
