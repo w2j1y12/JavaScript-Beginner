@@ -1,4 +1,4 @@
-20220706
+# 20220706 2
 
 #### Semantic : 의미를 부여하여 변수 이름을 작명
 
@@ -80,4 +80,32 @@ console.log(point); // undefined
 var point = undefined;
 console.log(point); // undefined
 ```
-####
+#### Null type
+##### undefined는 단지 변수만 선언한 것, null은 할당해야 할 값이 null
+
+```
+var book;
+console.log(book); // undefined
+
+var point = null;
+console.log(point); // null
+```
+#### Boolean type
+##### true, false
+
+#### Object type
+##### Property : {name:value} 형태 - JS의 기본 구조
+```
+var book = {
+  title:"책", point:123
+};
+console.log(book); // {title:책, point:123}
+```
+##### Object는 프로퍼티 집합
+
+```
+console.log(typeof null); // object
+console.log(typeof {book:"책"}); // object
+// null의 데이터 타입이 null x
+```
+
