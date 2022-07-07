@@ -99,6 +99,58 @@ console.log(5%2.3); // 0.40000000000036
 console.log(5*10-(2*2.3*10))/10); // 0.4
 ```
 
+#### 단항 연산자
+##### 기본 형태는 +(-)value (항이 하나)
+##### 값을 Number 타입으로 변환
+```
+var value = "7";
+console.log(typeof value); // string
+console.log(typeof +value); // Number
+console.log(typeof Number(value)); // Number
+// Number() 함수 사용하는 것이 가독성이 좋음
+```
+#### 후치 연산자
+##### 기본 형태는 value++(--)
+##### 값을 자동으로 1 증가시킴(또는 감소)
+###### 단, 문장을 수행한 후 증가(감소) = 세미콜론 다음에서 증가(감소)
+```
+var one = 1;
+var value = one++ + 3;
+console.log(value); // 4
+console.log(one); // 2
+```
+```
+var two = 2;
+var value = two-- + 3;
+console.log(value); // 5
+console.log(two); // 1
+```
+
+#### 전치 연산자
+##### 기본 형태는 ++(--)value
+##### 값을 자동으로 1 증가시킴(또는 감소)
+###### 단, 문장 안에서 1 증가(감소) = 표현식을 평가하기 전에 1 증가 -> 표현식에서 증가된 값을 사용
+```
+var one = 1;
+var value = ++one + 3;
+console.log(value); //5
+```
+```
+var two = 2;
+var value = --two + 3;
+console.log(value); // 4
+```
+#### ! 연산자
+##### 논리 NOT 연산자
+##### 기본 형태는 !value
+##### 표현식 평과 결과를 true, false로 변환 -> true => false / false => true
+##### 원래 값은 바뀌지 않으며 사용할 때만 변환
+```
+var value = true;
+console.log(!value); // false
+console.log(!!value) // true
+```
+
 
 
 
