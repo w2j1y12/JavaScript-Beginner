@@ -101,6 +101,19 @@ while : 3 */
 #### 코딩 시간
 ##### Q. for()문을 사용하여 1에서 50까지 반복하면서 홀수 번째 값과 짝수 번째 값을 누적하고 반복한 값을 누적합니다. 반복을 완료하면 누적한 홀수 번째 값과 누적한 짝수 번째 값을 출력합니다. 누적한 전체 값을 출력합니다
 ```
-
+var even, odd;
+var sumeven = 0, sumodd = 0;
+for(var k = 1; k < 51; k ++){
+    if((k%2)==0) {
+        even =  k;
+        sumeven += even;
+    } else {
+        odd = k;
+        sumodd += odd;
+    }
+};
+console.log("짝수 : ", sumeven); // 짝수 : 650
+console.log("홀수 : ", sumodd); // 홀수 : 625
+```
 
 
