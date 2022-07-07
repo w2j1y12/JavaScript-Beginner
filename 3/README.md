@@ -149,7 +149,123 @@ var value = true;
 console.log(!value); // false
 console.log(!!value) // true
 ```
+#### 유니코드 Unicode
+##### 세계의 모든 문자를 통합하여 코드화
+##### http://www.unicode.org/
+##### JS는 u 앞에 역슬래시 작성
+```
+console.log("\u0031"); // 1
+console.log("\u0041"); // A
+// 역슬래시 자체를 문자로 표현하려면 두 개 작성
+console.log("\\0031"); // \u0031
+```
+#### UTF(Unicode Transformation Format)
+##### 유니코드의 코드 포인트를 매핑하는 방법
 
+#### 관계 연산자
+##### >, <, <=, >=
+1. 양쪽이 Number 타입일 때
+- 왼쪽이 오른쪽보다 크면 true, 아니면 false 반환
+```
+console.log((1+2) > 1); // true
+```
+2. String 타입 비교
+- 한 쪽이 String 타입이면 false
+```
+console.log(1>"A"); // false
+```
+- 양쪽이 모두 String 타입이면 유니코드 사전 순서로 비교
+```
+console.log(("\u0033" > "\u0032")); // true
+console.log("A" > "1"); // true -> u0041 > u0031
+console.log("가" > "다"); // false
+```
+- 문자 하나씩 비교
+```
+console.log("A07" > "A21"); // false
+// A =A => 0 > 2 x => false
+```
+#### 동등 연산자(==)
+##### 왼쪽과 오른쪽의 값이 같으면 true, 다르면 false
+##### 값 타입은 비교하지 않음
+```
+console.log(1 == "1"); // true
+// 문자타입을 숫자타입으로 변환하여 비교
+```
+```
+var value;
+console.log(value == undefined); // true
+console.log(value == null); true
+// typeof는 다르지만 값만 연산하기 때문에 true
+```
+#### 부등 연산자(!=)
+##### 왼쪽과 오른쪽 값이 다르면 true, 같으면 false
+##### a != b 와 !(a == b) 같음
 
+#### 일치 연산자(===)
+##### 왼쪽과 오른쪽의 값과 타입이 모두 같으면 true, 값 또는 타입이 다르면 false
+```
+console.log(1 === "1); // false
+```
+``` 
+var value; // undefined
+console.log(value == null); // true
+console.log(value === null); // false
+```
+#### 불일치 연산자(!==)
+##### 값 또는 타입이 다르면 true, true가 아니면 false
 
+#### 콤마 연산자(,)
+##### 콤마로 표현식을 분리
 
+#### 그룹핑 연산자(())
+##### 소괄호 안의 표현식을 먼저 평가
+
+#### 논리 OR 연산자(||)
+##### 표현식의 평가 결과가 하나라도 true이면 true, 아니면 false
+```
+var value, zero = 0, two = 2;
+console.log(value || zero || two); // 2
+// undefinde || 0 || 2 -> false || false || true 
+// true가 된 시점의 값을 반환
+```
+```
+var value, zero = 0;
+console.log(zero || value); // undefined
+// 0 || undefined -> false || false
+// 모두 false이면 마지막 변숫값 반환
+```
+##### 왼쪽 결과가 true이면 오른쪽은 비교하지 않음
+```
+var one = 1;
+console.log(one === 1 || two === 2); // true
+// two를 선언하지 않았기 때문에 원래 error가 발생
+// 오른쪽에서 이미 true가 나왔기 때문에 ㄱㅊ
+```
+#### 논리 AND 연산자(&&)
+##### 표현식의 평가 결과가 모두 true이면 false, 아니면 false
+```
+var one = 1, two = 2;
+console.log(one && two); // 2
+// 1 || 2 -> true || true 
+// 모두가 true이면 마지막 값을 반환
+```
+##### 왼쪽 결과가 false이면 오른쪽은 비교하지 않음
+```
+var one = 1, zero = 0;
+console.log(one && zero && nine); // 0
+// 1 || 0 || ? -> true || false || ? 
+// 이미 zero가 false이므로 오른쪽은 비교 x -> nine error x
+```
+#### 조건 연산자
+##### exp ? exp-1 | exp-2 (3항 연산자라고도 함)
+##### exp 표현식을 먼저 평가
+###### true이면 exp -1 결과 반환
+###### false이면 exp-2 결과 반환
+```
+console.log(1 === 1 ? "같음" : "다름"); // 같음
+console.log(1 === "1" ? "같음 : "다름"); // 다름
+```
+#### 연산자 우선순위
+##### ()가 가장 높음
+##### https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Operators/Operator_Precedence
