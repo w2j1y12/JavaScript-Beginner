@@ -180,4 +180,86 @@ console.log(value);
 // 200
 // 위와 마찬가지로 default 이후의 문장도 수행하므로 value = 200
 ```
+##### OR(||) 형태
+```
+var exp = 3;
+switch(exp) {
+  case 2 :
+  case 3 :
+    console.log(100);
+};
+// 100
+```
+#### try-catch
+##### try 블록 catch(식별자) 블록
+##### try 블록 finally 블록
+##### try 블록 catch(식별자) 블록 finally 블록
+##### try 문에서 예외 발생을 인식 -> catch 블록 실행
+```
+var value;
+try {
+  value = ball; // error 발생 -> catch문 실행
+} catch(error) {
+  console.log("catch 실행");
+};
+// catch 실행
+```
+##### finally 블록은 예외 발생과 관계없이 실행
+```
+var sports;
+try {
+  sports = ball;
+} catch(error) {
+  console.log("catch 실행");
+} finally {
+  console.log("finally 실행");
+};
+/* catch 실행
+finally 실행 */
+```
+#### throw
+##### 명시적으로 예외를 발생시킴
+##### 예외가 발생하면 catch문 실행
+``` 
+try {
+  throw "예외 발생시킴"; // 바로 catch 실행
+  var sports = "스포츠"; // 따라서 undefined
+} catch(errpr) {
+  console.log(error);
+  console.log(sports);
+};
+/* 예외 발생시킴
+undefined*/
+```
+```
+try {
+  throw{
+    msg : "예외 발생시킴",
+    bigo : "임의의 이름 사용"
+  };
+} catch(error) {
+  console.log(error.msg);
+  console.log(error.bigo);
+};
+/* 예외 발생시킴
+임의의 이름 사용 */
+```
+#### strict 모드
+##### 기본 형태 "use strict"
+##### 엄격하게 JS 문법 사용의 선언
+```
+"use strict"
+try {
+  book = "변수 선언하지 않음";
+  console.log(book);
+} catch(error) {
+  console.log(error.message);
+};
+// book is not defined
+// var 키워드 작성 x
 
+#### 코딩시간
+##### Q. JS 프로그램에서 사용하지 않는 label 문장의 코드를 작성하고 사용하지 않는 이유를 설명하세요.
+##### Q. "use strict" 아래에 with 문을 사용한 코드를 작성하고 에러가 발생하는 것을 확인 후, 이유를 설명하세요.
+
+```
