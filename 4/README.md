@@ -115,5 +115,42 @@ for(var k = 1; k < 51; k ++){
 console.log("짝수 : ", sumeven); // 짝수 : 650
 console.log("홀수 : ", sumodd); // 홀수 : 625
 ```
+#### break
+##### 반복을 종료시킴
+```
+var k = 0, m = 0;
+while(k < 3) {
+  m ++;
+  if(m === 2) }{
+    break;
+  };
+  console.log(m);
+};
+//1
+```
+```
+for(var k = 0; k < 3; k ++) {
+  if(k ===1) {
+    break
+    console.log("k === 1");
+  };
+  console.log(k);
+};
+// 0
+```
+#### continue
+##### 반복문의 처음으로 분기
+```
+for(var k = 0; k < 5; k ++) {
+  if(k === 2 || k === 3) {
+    continue; // k ++로 감
+  };
+  console.log(k);
+};
+/* 0
+1
+4 */
+```
+
 
 
