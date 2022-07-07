@@ -151,6 +151,33 @@ for(var k = 0; k < 5; k ++) {
 1
 4 */
 ```
-
-
+#### switch
+##### switch(표현식) {case 표현식 : 문장 리스트 opt default : 문징 리스트 opt};
+``` 
+var exp = 1;
+switch(exp) {
+  case 1 :
+    console.log(100);
+  case 2 :
+    console.log(200);
+};
+/* 100
+200 */
+// case 1 아래의 문장들도 수행하므로 break 작성 해줘야 함
+```
+##### 일치하는 case가 없으면 default 수행
+``` 
+var exp = 7;
+switch(exp) {
+  case 1 : 
+    value = 100;
+  default :
+    value = 700;
+  case 2 :
+    value = 200;
+};
+console.log(value);
+// 200
+// 위와 마찬가지로 default 이후의 문장도 수행하므로 value = 200
+```
 
