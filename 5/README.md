@@ -21,3 +21,32 @@ var point = function(one, two) {
 3. 파라미터 Parameter
 4. 함수Body
 - 중괄호 안에 작성한 코드
+
+#### 함수 호출
+##### 함수는 호출되어야 실행
+- 함수 이름과 소괄호 작성
+- 호출된 함수에 넘겨줄 값 작성(파라미터)
+```
+function setValue(one, two) {
+  var total = one + two;
+};
+
+setValue(10, 20);
+```
+
+#### return
+##### return 표현식opt;
+##### 표현식의 평가 결과 반환
+```
+function getPoint() {
+  return 10 * 30;
+};
+var result = getPoint();
+console.log(result); // 300
+```
+```
+// return 또는 표현식 x -> undefined 반환
+function getPoint() {};
+var result = getPoint();
+console.log(typeof result); // undefined
+```
