@@ -28,7 +28,28 @@ var book = {
 - obj.abc = 123;
 - obj 오브젝트에 프로퍼티 이름으로 abc가 없으면 abc : 123 추가, 있으면 프로퍼티 값이 123으로 변경
 ```
+// 점과 프로퍼티 이름 사용
 var book = {};
 book.title = "JS책";
 console.log(book); // {title : JS책}
+
+// 대괄호 사용
+var book = {};
+book["title"] = "JS책";
+console.log(book); // {title : JS책}
+
+// 변수 사용
+var book = {title : "JS책"};
+var varName = "title";
+book[varName] = "HTML책";
+console.log(book); // {title : HTML책}
+```
+##### 추출
+```
+// 오브젝트에서 프로퍼티 값 추출
+var obj = {book : "책"};
+console.log(obj.book); // 책
+console.log(obj["sports"]); // undefined
+
+// obj 오브젝트에 프로퍼티 이름인 book이 있으면 프로퍼티 값 반환, 없으면 undefined 반환
 ```
