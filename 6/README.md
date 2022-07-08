@@ -53,3 +53,23 @@ console.log(obj["sports"]); // undefined
 
 // obj 오브젝트에 프로퍼티 이름인 book이 있으면 프로퍼티 값 반환, 없으면 undefined 반환
 ```
+
+##### 열거
+###### 오브젝트에서 프로퍼티를 열거
+```
+// for(변수 in 오브젝트) 문장;
+// 변수 = 프로퍼티 이름이 item
+
+var sports = {
+  soccer = "축구",
+  baseball = "야구"
+};
+for(var item in sports) {
+  console.log(item);
+  console.log(sports[item]);
+}
+/* soccer
+축구
+baseball
+야구
+```
