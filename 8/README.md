@@ -100,6 +100,39 @@ console.log(20..toString()); // 20
 ###### 지역화를 원하지 않으면 toString()으로 변환
 ```
 var value = 1234.56;
-console.log(value.toLocaleString());
-console.log(value.toLocaleString('de-DE'));
-console.log(value.toLocaleString('zh-Hans-CN-u-nu-hanidec));
+console.log(value.toLocaleString()); // 1,234.56
+console.log(value.toLocaleString('de-DE')); // 1.234,56
+console.log(value.toLocaleString('zh-Hans-CN-u-nu-hanidec')); // 一,二三四.五六
+```
+#### toExponential()
+- data : 변환 대상
+- 파라미터 : 소수 이하 자리 수
+- 반환 : 변환한 값
+##### 숫자를 지수 표기로 반환하여 문자열로 반환
+##### 표시 방법
+- 변환 대상의 첫 자리만 소수점 표시
+- 나머지는 소수 아래에 표시
+- 지수(e+) 다음에 정수에서 소수로 변환된 자릿수 표시
+```
+var value = 1234;
+console.log(value.toExponential()); // 1.234e+3
+```
+```
+var value = 123456;
+console.log(value.toExponential(3)); // 1.235e+5
+// 반올림 개념
+```
+#### toFixed()
+- data : 변환 대상
+- 파라미터 : 반환할 소수 이하 자릿수
+- 반환 : 변환한 값
+##### 고정 소숫점 표기로 변환하여 문자열로 반환
+##### 표시 방법
+- 파라미터 값보다 소수 자릿수가 길면 작성한 자리수에 1을 더한 위치에서 반올림
+- 변환 대상 자릿수보다 파라미터 값이 크면 나머지를 0으로 채워 반환
+``` 
+var value = 1234.567;
+console.log(value.toFixed(2)); // 1234.57
+console.log(value.toFixed()); // 1234
+console.log(value.toFixed(5)); // 1234.56700
+```
