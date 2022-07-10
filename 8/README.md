@@ -46,3 +46,60 @@ console.log(oneObj.valueOf()); // 123
 var twoObj = new Number("456");
 console.log(twoObj.valueOf()); // 456
 ```
+#### Number 인스턴스 생성
+- 파라미터 : 값 opt
+- 반환 : 생성한 Number 인스턴스
+
+#### 프리미티브 값(Primitive Value)
+##### 언어에 있어 가장 낮은 단계의 값
+###### ex) var book = "책"; -> "책"은 더이상 분해, 전개 불가
+
+##### 프리미티브 타입
+- Number, String, Boolean : 인스턴스 생성 가능
+- Null, Undefined : 인스턴스 생성 불가
+- Object는 프리미티브 값을 제공하지 않음
+
+#### 인스턴스의 프리미티브 값
+##### var obj = new Number(123);
+###### 인스턴스를 생성하면 파라미터 값을 인스턴스의 프리미티브 값으로 설정
+##### 프리미티브 값을 갖는 오브젝트 
+###### Boolean, Data, Number, String
+```
+var obj = new Number(123);
+console.log(obj + 200); // 323
+```
+#### valueOf()
+- data : Number 인스턴스, 숫자
+- 파라미터 : 사용하지 않음
+- 반환 : 프리미티브 값
+##### Number 인스턴스의 프리미티브 값 반환
+```
+var obj = enw Number("123");
+console.log(obj.valueOf()); // 123
+```
+#### toString()
+- data : 변환 대상
+- 파라미터 : 진수 opt, 디폴트는 10진수
+- 반환 : 변환한 값
+##### data를 String 타입으로 변환
+```
+var value = 20;
+console.log(20 === value.toStirng()); // fasle
+console.log(value.toString(16)); // 14
+```
+##### 변환 시 주의사항
+```
+console.log(20..toString()); // 20
+// 유동 소수점
+```
+#### toLocaleString()
+- data : 변환대상
+- 파라미터 : 사용하지 않음
+- 반환 : 변환한 값
+##### 숫자를 브라우저가 지원하는 지역화 문자로 변환
+###### 지역화를 원하지 않으면 toString()으로 변환
+```
+var value = 1234.56;
+console.log(value.toLocaleString());
+console.log(value.toLocaleString('de-DE'));
+console.log(value.toLocaleString('zh-Hans-CN-u-nu-hanidec));
