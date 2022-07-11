@@ -98,3 +98,63 @@ var result = toString(123);
 // 123을 오브젝트로 간주 -> Object 형태를 
 console.log(result); // [object Undefined]
 ```
+
+#### charAt()
+- data : 반환  대상
+- 파라미터 : 반환 기준 인덱스
+- 반환 : 인덱스 번째 문자
+##### 인덱스의 문자를 반환
+```
+var value = "sports";
+console.log(value.charAt(1)); // p
+console.log(value[1]); // p
+```
+```
+// 문자열 길이보다 인덱스가 크면 빈 문자열 반환
+var value = "sports";
+console.log(value.charAt(12)); // ""
+
+// 일반적으로 존재하지 않으면 undefinde 반환
+console.log(value[12]); // undefinde
+```
+#### indexOf()
+- data : 검색 대상
+- 파라미터 1 : 검색할 문자열
+- 파라미터 2 : 검색 시작 위치, 디폴트 0
+- 반환 : 인덱스
+##### data 위치의 문자열에서 파라미터의 문자와 같은 첫 번째 인덱스를 반환
+```
+// 왼 -> 오
+var value = "123123";
+console.log(value.indexOf(2)); // 1
+consoel.log(value.indexOf(23)); // 1
+
+// 두 번째 파라미터 작성 -> 작성한 인덱스부터 검색
+console.log(value.indexOf(2, 3)); // 4
+console.log(value.indexOf(2, -1)); // 1 -> 두 번째 파라미터가 0보다 작으면 1
+console.log(value.indexOf(2, 9)); // -1 -> 두 번째 파라미터가 length보다 크면 -1
+console.log(value.indexOf(2, "A")); // 1 -> 두 번째 파라미터가 NaN이면 처음부터 검색
+
+// 같은 문자 없으면 -1 반환
+console.log(value.indexOf(15)); // -1
+```
+
+#### lastIndexOf()
+- data : 검색 대상
+- 파라미터 1 : 검색할 문자열
+- 파라미터 2 : 검색 시작 위치, 디폴트 0
+- 반환 : 인덱스
+##### data 위치의 문자열에서 파라미터의 문자와 같은 인덱스를 반환
+###### 뒤에서 앞으로 검색
+```
+var value = "123123";
+console.log(value.lastIndexOf(2)); // 4
+
+// 두 번째 파라미터 작성 -> 작성한 인덱스부터 검색
+console.log(value.lastIndexOf(1, 4)); // 3
+
+// 두 번째 파라미터가 0보다 작으면 -1 반환
+console.log(value.lastIndexOf(2, -1); // -1
+```
+#### Q
+##### indexOf()와 lastIndexOf()를 통합하여 발생 가능한 케이스를 기술하고 이에 맞는 코드를 작성하세요.
