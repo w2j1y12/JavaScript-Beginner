@@ -58,3 +58,28 @@ var obj = {key:"value"};
 console.log(obj.valueOf()); // {key:value}
 ```
 
+#### 함수와 메소드 연결 및 호출
+##### 함수
+- 오브젝트에 연결
+- Object.create()
+```
+console.log(Object.create); // function create() { [native code] } -> Object에 create가 존재하므로 함수 출력
+console.log(Object.prototype.create); // undefined -> Object.prototype에 create가 존재하지 않으므로 undefined 출력
+```
+##### 메소드
+- 오브젝트의 prototype에 연결
+- Object.prototype.toString() or 인스턴스를 생성하여 호출
+```
+console.log(Object.prototype.toString); // function toString() { [native code] } // Object.prototype에 toString이 존재하므로 함수 출력
+
+var obj = {}; // 인스턴스를 사용하여 메소드를 호출할 때는 prototype 사용 x -> prototype에 연결된 메소드로 인스턴스를 생성하기 때문
+console.log(obj.toString); // function toString() { [native code] }
+```
+##### 함수와 메소드를 구분해야 하는 이유
+- JS 코드 작성 방법이 다름
+- 함수는 파라미터에 값을 작성하고, 메소드는 메소드 앞에 값을 작성
+```
+console.log(String.fromCharCode(49,65)); // 1A
+```
+
+
